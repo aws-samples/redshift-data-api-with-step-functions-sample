@@ -18,6 +18,9 @@ export class RedshiftDataApiStepFunctionsStack extends cdk.Stack {
                 masterUsername: "admin",
             },
             defaultDatabaseName: "sample",
+            numberOfNodes: 1,
+            clusterType: redshift.ClusterType.SINGLE_NODE,
+            removalPolicy: cdk.RemovalPolicy.DESTROY,
         });
 
         const topic = new sns.Topic(this, `Topic`);

@@ -292,14 +292,14 @@ Object {
       "Type": "AWS::Lambda::Function",
     },
     "RedShiftCluster84D121BA": Object {
-      "DeletionPolicy": "Retain",
+      "DeletionPolicy": "Delete",
       "Properties": Object {
         "AllowVersionUpgrade": true,
         "AutomatedSnapshotRetentionPeriod": 1,
         "ClusterSubnetGroupName": Object {
           "Ref": "RedShiftClusterSubnetsBEF62129",
         },
-        "ClusterType": "multi-node",
+        "ClusterType": "single-node",
         "DBName": "sample",
         "Encrypted": true,
         "MasterUserPassword": Object {
@@ -327,7 +327,6 @@ Object {
           ],
         },
         "NodeType": "dc2.large",
-        "NumberOfNodes": 2,
         "PubliclyAccessible": false,
         "VpcSecurityGroupIds": Array [
           Object {
@@ -339,7 +338,7 @@ Object {
         ],
       },
       "Type": "AWS::Redshift::Cluster",
-      "UpdateReplacePolicy": "Retain",
+      "UpdateReplacePolicy": "Delete",
     },
     "RedShiftClusterSecretAttachmentA558EBCE": Object {
       "Properties": Object {
@@ -381,7 +380,7 @@ Object {
       "Type": "AWS::EC2::SecurityGroup",
     },
     "RedShiftClusterSubnetsBEF62129": Object {
-      "DeletionPolicy": "Retain",
+      "DeletionPolicy": "Delete",
       "Properties": Object {
         "Description": "Subnets for RedShiftCluster Redshift cluster",
         "SubnetIds": Array [
@@ -394,7 +393,7 @@ Object {
         ],
       },
       "Type": "AWS::Redshift::ClusterSubnetGroup",
-      "UpdateReplacePolicy": "Retain",
+      "UpdateReplacePolicy": "Delete",
     },
     "TopicBFC7AF6E": Object {
       "Type": "AWS::SNS::Topic",
