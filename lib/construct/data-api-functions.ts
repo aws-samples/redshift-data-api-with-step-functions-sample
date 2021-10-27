@@ -10,8 +10,6 @@ interface DataApiFunctionsProps {
 }
 
 export class DataApiFunctions extends cdk.Construct {
-    readonly executeStatementHandler: lambda.IFunction;
-    readonly pollingHandler: lambda.IFunction;
     readonly getStatementResult: lambda.IFunction;
 
     constructor(scope: cdk.Construct, id: string, props: DataApiFunctionsProps) {
@@ -46,17 +44,6 @@ export class DataApiFunctions extends cdk.Construct {
             DATABASE_NAME: props.databaseName,
             USERNAME: props.databaseUsername,
         };
-
-        this.executeStatementHandler = new lambdapy.PythonFunction(this, "ExecuteStatementHandler", {
-            entry: "./lambda/execute_statement",
-            role: lambdaRole,
-            environment,
-        });
-
-        this.pollingHandler = new lambdapy.PythonFunction(this, "PollingHandler", {
-            role: lambdaRole,
-            entry: "./lambda/polling",
-        });
 
         this.getStatementResult = new lambdapy.PythonFunction(this, "GetStatementResultHandler", {
             entry: "./lambda/get_statement_result",

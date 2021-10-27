@@ -10,7 +10,7 @@ rs_data = boto3.client("redshift-data")
 
 def handler(event, context):
     logger.info('Event: %s', event)
-    statement_id = event["statementId"]
+    statement_id = event["Id"]
     results = []
 
     # We fetch all the records just for demo purpose.

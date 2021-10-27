@@ -2,12 +2,18 @@ import * as cdk from "@aws-cdk/core";
 import * as sns from "@aws-cdk/aws-sns";
 import * as sfn from "@aws-cdk/aws-stepfunctions";
 import * as sfnt from "@aws-cdk/aws-stepfunctions-tasks";
+import * as iam from "@aws-cdk/aws-iam";
 import { DataApiFunctions } from "./data-api-functions";
 
 interface DataApiFlowProps {
     readonly functions: DataApiFunctions;
     readonly errorNotifyTopic: sns.ITopic;
     readonly successNotifyTopic: sns.ITopic;
+
+    readonly redshiftClusterIdentifier: string;
+    readonly redshiftClusterArn: string;
+    readonly databaseName: string;
+    readonly databaseUsername: string;
 }
 
 export class DataApiFlow extends cdk.Construct {
@@ -32,14 +38,23 @@ export class DataApiFlow extends cdk.Construct {
             resultPath: "$.Notify",
         });
 
-        const executeStatement = new sfnt.LambdaInvoke(this, `ExecuteStatement`, {
-            lambdaFunction: functions.executeStatementHandler,
+        const executeStatement = new sfnt.CallAwsService(this, `ExecuteStatement`, {
+            service: "redshiftdata",
+            action: "executeStatement",
             resultPath: "$.ExecuteStatement",
+            parameters: {
+                ClusterIdentifier: props.redshiftClusterIdentifier,
+                Database: props.databaseName,
+                Sql: "select s.nspname as table_schema, s.oid as schema_id from pg_catalog.pg_namespace s",
+                DbUser: props.databaseUsername,
+            },
+            iamResources: [props.redshiftClusterArn],
+            iamAction: "redshift-data:ExecuteStatement",
         }).addCatch(errorHandler, { resultPath: "$.Error" });
 
         const getStatementResult = new sfnt.LambdaInvoke(this, `GetStatementResult`, {
             lambdaFunction: functions.getStatementResult,
-            inputPath: "$.ExecuteStatement.Payload",
+            inputPath: "$.ExecuteStatement",
             resultPath: "$.GetStatementResult",
         })
             .addCatch(errorHandler, { resultPath: "$.Error" })
@@ -48,13 +63,18 @@ export class DataApiFlow extends cdk.Construct {
         const poller = (id: string, inputPath: string, next: sfn.IChainable, error: sfn.IChainable = errorHandler) => {
             const pollingOutputPath = `$.PollResult${id}`;
             const pollingWaitTime = cdk.Duration.seconds(10);
-            const polling = new sfnt.LambdaInvoke(this, id, {
-                lambdaFunction: functions.pollingHandler,
-                inputPath,
+            const polling = new sfnt.CallAwsService(this, id, {
+                service: "redshiftdata",
+                action: "describeStatement",
                 resultPath: pollingOutputPath,
-            }).addCatch(error, { resultPath: "$.Error" });
+                parameters: {
+                    Id: sfn.TaskInput.fromJsonPathAt(inputPath).value,
+                },
+                iamResources: ["*"],
+                iamAction: "redshift-data:DescribeStatement",
+            }).addCatch(errorHandler, { resultPath: "$.Error" });
 
-            const statusPath = `${pollingOutputPath}.Payload.Status`;
+            const statusPath = `${pollingOutputPath}.Status`;
             const choice = new sfn.Choice(this, `${id}JobComplete?`)
                 // Go to next step if the statement is finished
                 .when(sfn.Condition.stringEquals(statusPath, "FINISHED"), next)
@@ -75,10 +95,18 @@ export class DataApiFlow extends cdk.Construct {
             return polling;
         };
 
-        executeStatement.next(poller(`StatementPolling`, "$.ExecuteStatement.Payload", getStatementResult));
+        executeStatement.next(poller(`StatementPolling`, "$.ExecuteStatement.Id", getStatementResult));
 
         this.flowStateMachine = new sfn.StateMachine(this, `FlowStateMachine`, {
             definition: sfn.Chain.start(executeStatement),
         });
+
+        this.flowStateMachine.addToRolePolicy(
+            new iam.PolicyStatement({
+                effect: iam.Effect.ALLOW,
+                resources: ["*"],
+                actions: ["redshift:GetClusterCredentials"],
+            }),
+        );
     }
 }

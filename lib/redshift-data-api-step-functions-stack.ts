@@ -5,6 +5,7 @@ import * as sns from "@aws-cdk/aws-sns";
 import { DataApiFlow } from "./construct/data-api-flow";
 import { DataApiFunctions } from "./construct/data-api-functions";
 import { SnsPublish } from "@aws-cdk/aws-stepfunctions-tasks";
+import { Stack } from "@aws-cdk/core";
 
 export class RedshiftDataApiStepFunctionsStack extends cdk.Stack {
     constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
@@ -35,6 +36,13 @@ export class RedshiftDataApiStepFunctionsStack extends cdk.Stack {
             functions,
             errorNotifyTopic: topic,
             successNotifyTopic: topic,
+            redshiftClusterIdentifier: redshiftCluster.clusterName,
+            redshiftClusterArn: this.formatArn({
+                service: "redshift",
+                resource: `cluster:${redshiftCluster.clusterName}`,
+            }),
+            databaseUsername: "admin",
+            databaseName: "sample",
         });
 
         new cdk.CfnOutput(this, "StateMachineArn", {
