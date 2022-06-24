@@ -171,6 +171,38 @@ Object {
       },
       "Type": "AWS::IAM::Policy",
     },
+    "FunctionsExecuteStatementHandlerD6AF18F6": Object {
+      "DependsOn": Array [
+        "FunctionsDataApiRoleDefaultPolicyFB0D7CAF",
+        "FunctionsDataApiRole8AB01185",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "S3Bucket": Object {
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
+          },
+          "S3Key": "1d757c93b638e4e354f851b75ba50e205c59b02490306cfa8ba3bbbbe03f8a59.zip",
+        },
+        "Environment": Object {
+          "Variables": Object {
+            "CLUSTER_IDENTIFIER": Object {
+              "Ref": "RedShiftCluster84D121BA",
+            },
+            "DATABASE_NAME": "sample",
+            "USERNAME": "admin",
+          },
+        },
+        "Handler": "index.handler",
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "FunctionsDataApiRole8AB01185",
+            "Arn",
+          ],
+        },
+        "Runtime": "python3.9",
+      },
+      "Type": "AWS::Lambda::Function",
+    },
     "FunctionsGetStatementResultHandler75A14620": Object {
       "DependsOn": Array [
         "FunctionsDataApiRoleDefaultPolicyFB0D7CAF",
@@ -181,7 +213,7 @@ Object {
           "S3Bucket": Object {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "313b872fd29af8f32c65d2c7bd91173c760a4271a4d0e30d14adb01eee7f2a16.zip",
+          "S3Key": "228b31903cfa123fcb1eb732bb9c0fcd2b74c4718bb9f6182d95a0c76c6cc75f.zip",
         },
         "Environment": Object {
           "Variables": Object {
@@ -191,6 +223,29 @@ Object {
             "DATABASE_NAME": "sample",
             "USERNAME": "admin",
           },
+        },
+        "Handler": "index.handler",
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "FunctionsDataApiRole8AB01185",
+            "Arn",
+          ],
+        },
+        "Runtime": "python3.9",
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "FunctionsPollingHandler44532339": Object {
+      "DependsOn": Array [
+        "FunctionsDataApiRoleDefaultPolicyFB0D7CAF",
+        "FunctionsDataApiRole8AB01185",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "S3Bucket": Object {
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
+          },
+          "S3Key": "f738d05077c9b9528bf4c8f30bd2df43eeaabfd0c41ea1e2d831bb555cdf18b0.zip",
         },
         "Handler": "index.handler",
         "Role": Object {
@@ -705,19 +760,29 @@ Object {
           "Fn::Join": Array [
             "",
             Array [
-              "{\\"StartAt\\":\\"ExecuteStatement\\",\\"States\\":{\\"ExecuteStatement\\":{\\"Next\\":\\"StatementPolling\\",\\"Catch\\":[{\\"ErrorEquals\\":[\\"States.ALL\\"],\\"ResultPath\\":\\"$.Error\\",\\"Next\\":\\"NotifyError\\"}],\\"Type\\":\\"Task\\",\\"ResultPath\\":\\"$.ExecuteStatement\\",\\"Resource\\":\\"arn:",
+              "{\\"StartAt\\":\\"ExecuteStatement\\",\\"States\\":{\\"ExecuteStatement\\":{\\"Next\\":\\"StatementPolling\\",\\"Retry\\":[{\\"ErrorEquals\\":[\\"Lambda.ServiceException\\",\\"Lambda.AWSLambdaException\\",\\"Lambda.SdkClientException\\"],\\"IntervalSeconds\\":2,\\"MaxAttempts\\":6,\\"BackoffRate\\":2}],\\"Catch\\":[{\\"ErrorEquals\\":[\\"States.ALL\\"],\\"ResultPath\\":\\"$.Error\\",\\"Next\\":\\"NotifyError\\"}],\\"Type\\":\\"Task\\",\\"ResultPath\\":\\"$.ExecuteStatement\\",\\"Resource\\":\\"arn:",
               Object {
                 "Ref": "AWS::Partition",
               },
-              ":states:::aws-sdk:redshiftdata:executeStatement\\",\\"Parameters\\":{\\"ClusterIdentifier\\":\\"",
+              ":states:::lambda:invoke\\",\\"Parameters\\":{\\"FunctionName\\":\\"",
               Object {
-                "Ref": "RedShiftCluster84D121BA",
+                "Fn::GetAtt": Array [
+                  "FunctionsExecuteStatementHandlerD6AF18F6",
+                  "Arn",
+                ],
               },
-              "\\",\\"Database\\":\\"sample\\",\\"Sql\\":\\"select s.nspname as table_schema, s.oid as schema_id from pg_catalog.pg_namespace s\\",\\"DbUser\\":\\"admin\\"}},\\"StatementPolling\\":{\\"Next\\":\\"StatementPollingJobComplete?\\",\\"Catch\\":[{\\"ErrorEquals\\":[\\"States.ALL\\"],\\"ResultPath\\":\\"$.Error\\",\\"Next\\":\\"NotifyError\\"}],\\"Type\\":\\"Task\\",\\"ResultPath\\":\\"$.PollResultStatementPolling\\",\\"Resource\\":\\"arn:",
+              "\\",\\"Payload.$\\":\\"$\\"}},\\"StatementPolling\\":{\\"Next\\":\\"StatementPollingJobComplete?\\",\\"Retry\\":[{\\"ErrorEquals\\":[\\"Lambda.ServiceException\\",\\"Lambda.AWSLambdaException\\",\\"Lambda.SdkClientException\\"],\\"IntervalSeconds\\":2,\\"MaxAttempts\\":6,\\"BackoffRate\\":2}],\\"Catch\\":[{\\"ErrorEquals\\":[\\"States.ALL\\"],\\"ResultPath\\":\\"$.Error\\",\\"Next\\":\\"NotifyError\\"}],\\"Type\\":\\"Task\\",\\"InputPath\\":\\"$.ExecuteStatement.Payload\\",\\"ResultPath\\":\\"$.PollResultStatementPolling\\",\\"Resource\\":\\"arn:",
               Object {
                 "Ref": "AWS::Partition",
               },
-              ":states:::aws-sdk:redshiftdata:describeStatement\\",\\"Parameters\\":{\\"Id.$\\":\\"$.ExecuteStatement.Id\\"}},\\"StatementPollingWait\\":{\\"Type\\":\\"Wait\\",\\"Seconds\\":10,\\"Next\\":\\"StatementPolling\\"},\\"StatementPollingJobComplete?\\":{\\"Type\\":\\"Choice\\",\\"Choices\\":[{\\"Variable\\":\\"$.PollResultStatementPolling.Status\\",\\"StringEquals\\":\\"FINISHED\\",\\"Next\\":\\"GetStatementResult\\"},{\\"Or\\":[{\\"Variable\\":\\"$.PollResultStatementPolling.Status\\",\\"StringEquals\\":\\"STARTED\\"},{\\"Variable\\":\\"$.PollResultStatementPolling.Status\\",\\"StringEquals\\":\\"SUBMITTED\\"},{\\"Variable\\":\\"$.PollResultStatementPolling.Status\\",\\"StringEquals\\":\\"PICKED\\"}],\\"Next\\":\\"StatementPollingWait\\"}],\\"Default\\":\\"NotifyError\\"},\\"NotifyError\\":{\\"End\\":true,\\"Type\\":\\"Task\\",\\"ResultPath\\":\\"$.Notify\\",\\"Resource\\":\\"arn:",
+              ":states:::lambda:invoke\\",\\"Parameters\\":{\\"FunctionName\\":\\"",
+              Object {
+                "Fn::GetAtt": Array [
+                  "FunctionsPollingHandler44532339",
+                  "Arn",
+                ],
+              },
+              "\\",\\"Payload.$\\":\\"$\\"}},\\"StatementPollingWait\\":{\\"Type\\":\\"Wait\\",\\"Seconds\\":10,\\"Next\\":\\"StatementPolling\\"},\\"StatementPollingJobComplete?\\":{\\"Type\\":\\"Choice\\",\\"Choices\\":[{\\"Variable\\":\\"$.PollResultStatementPolling.Payload.Status\\",\\"StringEquals\\":\\"FINISHED\\",\\"Next\\":\\"GetStatementResult\\"},{\\"Or\\":[{\\"Variable\\":\\"$.PollResultStatementPolling.Payload.Status\\",\\"StringEquals\\":\\"STARTED\\"},{\\"Variable\\":\\"$.PollResultStatementPolling.Payload.Status\\",\\"StringEquals\\":\\"SUBMITTED\\"},{\\"Variable\\":\\"$.PollResultStatementPolling.Payload.Status\\",\\"StringEquals\\":\\"PICKED\\"}],\\"Next\\":\\"StatementPollingWait\\"}],\\"Default\\":\\"NotifyError\\"},\\"NotifyError\\":{\\"End\\":true,\\"Type\\":\\"Task\\",\\"ResultPath\\":\\"$.Notify\\",\\"Resource\\":\\"arn:",
               Object {
                 "Ref": "AWS::Partition",
               },
@@ -725,7 +790,7 @@ Object {
               Object {
                 "Ref": "TopicBFC7AF6E",
               },
-              "\\",\\"Message.$\\":\\"$\\",\\"Subject\\":\\"Executing a statement failed\\"}},\\"GetStatementResult\\":{\\"Next\\":\\"NotifySuccess\\",\\"Retry\\":[{\\"ErrorEquals\\":[\\"Lambda.ServiceException\\",\\"Lambda.AWSLambdaException\\",\\"Lambda.SdkClientException\\"],\\"IntervalSeconds\\":2,\\"MaxAttempts\\":6,\\"BackoffRate\\":2}],\\"Catch\\":[{\\"ErrorEquals\\":[\\"States.ALL\\"],\\"ResultPath\\":\\"$.Error\\",\\"Next\\":\\"NotifyError\\"}],\\"Type\\":\\"Task\\",\\"InputPath\\":\\"$.ExecuteStatement\\",\\"ResultPath\\":\\"$.GetStatementResult\\",\\"Resource\\":\\"arn:",
+              "\\",\\"Message.$\\":\\"$\\",\\"Subject\\":\\"Executing a statement failed\\"}},\\"GetStatementResult\\":{\\"Next\\":\\"NotifySuccess\\",\\"Retry\\":[{\\"ErrorEquals\\":[\\"Lambda.ServiceException\\",\\"Lambda.AWSLambdaException\\",\\"Lambda.SdkClientException\\"],\\"IntervalSeconds\\":2,\\"MaxAttempts\\":6,\\"BackoffRate\\":2}],\\"Catch\\":[{\\"ErrorEquals\\":[\\"States.ALL\\"],\\"ResultPath\\":\\"$.Error\\",\\"Next\\":\\"NotifyError\\"}],\\"Type\\":\\"Task\\",\\"InputPath\\":\\"$.ExecuteStatement.Payload\\",\\"ResultPath\\":\\"$.GetStatementResult\\",\\"Resource\\":\\"arn:",
               Object {
                 "Ref": "AWS::Partition",
               },
@@ -762,36 +827,56 @@ Object {
         "PolicyDocument": Object {
           "Statement": Array [
             Object {
-              "Action": "redshift-data:ExecuteStatement",
+              "Action": "lambda:InvokeFunction",
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::Join": Array [
-                  "",
-                  Array [
-                    "arn:",
-                    Object {
-                      "Ref": "AWS::Partition",
-                    },
-                    ":redshift:",
-                    Object {
-                      "Ref": "AWS::Region",
-                    },
-                    ":",
-                    Object {
-                      "Ref": "AWS::AccountId",
-                    },
-                    ":cluster:",
-                    Object {
-                      "Ref": "RedShiftCluster84D121BA",
-                    },
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "FunctionsExecuteStatementHandlerD6AF18F6",
+                    "Arn",
                   ],
-                ],
-              },
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "FunctionsExecuteStatementHandlerD6AF18F6",
+                          "Arn",
+                        ],
+                      },
+                      ":*",
+                    ],
+                  ],
+                },
+              ],
             },
             Object {
-              "Action": "redshift-data:DescribeStatement",
+              "Action": "lambda:InvokeFunction",
               "Effect": "Allow",
-              "Resource": "*",
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "FunctionsPollingHandler44532339",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "FunctionsPollingHandler44532339",
+                          "Arn",
+                        ],
+                      },
+                      ":*",
+                    ],
+                  ],
+                },
+              ],
             },
             Object {
               "Action": "sns:Publish",
@@ -825,11 +910,6 @@ Object {
                   ],
                 },
               ],
-            },
-            Object {
-              "Action": "redshift:GetClusterCredentials",
-              "Effect": "Allow",
-              "Resource": "*",
             },
           ],
           "Version": "2012-10-17",
