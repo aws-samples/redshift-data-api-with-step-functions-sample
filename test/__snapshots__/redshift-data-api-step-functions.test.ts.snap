@@ -2,6 +2,100 @@
 
 exports[`Snapshot test 1`] = `
 Object {
+  "Mappings": Object {
+    "ServiceprincipalMap": Object {
+      "af-south-1": Object {
+        "states": "states.af-south-1.amazonaws.com",
+      },
+      "ap-east-1": Object {
+        "states": "states.ap-east-1.amazonaws.com",
+      },
+      "ap-northeast-1": Object {
+        "states": "states.ap-northeast-1.amazonaws.com",
+      },
+      "ap-northeast-2": Object {
+        "states": "states.ap-northeast-2.amazonaws.com",
+      },
+      "ap-northeast-3": Object {
+        "states": "states.ap-northeast-3.amazonaws.com",
+      },
+      "ap-south-1": Object {
+        "states": "states.ap-south-1.amazonaws.com",
+      },
+      "ap-southeast-1": Object {
+        "states": "states.ap-southeast-1.amazonaws.com",
+      },
+      "ap-southeast-2": Object {
+        "states": "states.ap-southeast-2.amazonaws.com",
+      },
+      "ap-southeast-3": Object {
+        "states": "states.ap-southeast-3.amazonaws.com",
+      },
+      "ca-central-1": Object {
+        "states": "states.ca-central-1.amazonaws.com",
+      },
+      "cn-north-1": Object {
+        "states": "states.cn-north-1.amazonaws.com",
+      },
+      "cn-northwest-1": Object {
+        "states": "states.cn-northwest-1.amazonaws.com",
+      },
+      "eu-central-1": Object {
+        "states": "states.eu-central-1.amazonaws.com",
+      },
+      "eu-north-1": Object {
+        "states": "states.eu-north-1.amazonaws.com",
+      },
+      "eu-south-1": Object {
+        "states": "states.eu-south-1.amazonaws.com",
+      },
+      "eu-south-2": Object {
+        "states": "states.eu-south-2.amazonaws.com",
+      },
+      "eu-west-1": Object {
+        "states": "states.eu-west-1.amazonaws.com",
+      },
+      "eu-west-2": Object {
+        "states": "states.eu-west-2.amazonaws.com",
+      },
+      "eu-west-3": Object {
+        "states": "states.eu-west-3.amazonaws.com",
+      },
+      "me-south-1": Object {
+        "states": "states.me-south-1.amazonaws.com",
+      },
+      "sa-east-1": Object {
+        "states": "states.sa-east-1.amazonaws.com",
+      },
+      "us-east-1": Object {
+        "states": "states.us-east-1.amazonaws.com",
+      },
+      "us-east-2": Object {
+        "states": "states.us-east-2.amazonaws.com",
+      },
+      "us-gov-east-1": Object {
+        "states": "states.us-gov-east-1.amazonaws.com",
+      },
+      "us-gov-west-1": Object {
+        "states": "states.us-gov-west-1.amazonaws.com",
+      },
+      "us-iso-east-1": Object {
+        "states": "states.amazonaws.com",
+      },
+      "us-iso-west-1": Object {
+        "states": "states.amazonaws.com",
+      },
+      "us-isob-east-1": Object {
+        "states": "states.amazonaws.com",
+      },
+      "us-west-1": Object {
+        "states": "states.us-west-1.amazonaws.com",
+      },
+      "us-west-2": Object {
+        "states": "states.us-west-2.amazonaws.com",
+      },
+    },
+  },
   "Outputs": Object {
     "StateMachineArn": Object {
       "Export": Object {
@@ -13,41 +107,10 @@ Object {
     },
   },
   "Parameters": Object {
-    "AssetParameters171bc9189ea1838894edd8c39f1a7d687a225f290cd03e4bc8517b3f7374c922ArtifactHashA2365B4D": Object {
-      "Description": "Artifact hash for asset \\"171bc9189ea1838894edd8c39f1a7d687a225f290cd03e4bc8517b3f7374c922\\"",
-      "Type": "String",
-    },
-    "AssetParameters171bc9189ea1838894edd8c39f1a7d687a225f290cd03e4bc8517b3f7374c922S3BucketBC5B7A3B": Object {
-      "Description": "S3 bucket for asset \\"171bc9189ea1838894edd8c39f1a7d687a225f290cd03e4bc8517b3f7374c922\\"",
-      "Type": "String",
-    },
-    "AssetParameters171bc9189ea1838894edd8c39f1a7d687a225f290cd03e4bc8517b3f7374c922S3VersionKey215AC872": Object {
-      "Description": "S3 key for asset version \\"171bc9189ea1838894edd8c39f1a7d687a225f290cd03e4bc8517b3f7374c922\\"",
-      "Type": "String",
-    },
-    "AssetParameters7829186b09e2b0f4b5dde145df38fc3d9d09cad743fc97593b036f006e7fe9bcArtifactHash886B26AC": Object {
-      "Description": "Artifact hash for asset \\"7829186b09e2b0f4b5dde145df38fc3d9d09cad743fc97593b036f006e7fe9bc\\"",
-      "Type": "String",
-    },
-    "AssetParameters7829186b09e2b0f4b5dde145df38fc3d9d09cad743fc97593b036f006e7fe9bcS3Bucket3DE17F88": Object {
-      "Description": "S3 bucket for asset \\"7829186b09e2b0f4b5dde145df38fc3d9d09cad743fc97593b036f006e7fe9bc\\"",
-      "Type": "String",
-    },
-    "AssetParameters7829186b09e2b0f4b5dde145df38fc3d9d09cad743fc97593b036f006e7fe9bcS3VersionKeyFAA0A05F": Object {
-      "Description": "S3 key for asset version \\"7829186b09e2b0f4b5dde145df38fc3d9d09cad743fc97593b036f006e7fe9bc\\"",
-      "Type": "String",
-    },
-    "AssetParameters9fa7fb666d9c94e945481f85a7ae1e51856bd1b2eeaf725b0cd142595cea54daArtifactHashDF9B9634": Object {
-      "Description": "Artifact hash for asset \\"9fa7fb666d9c94e945481f85a7ae1e51856bd1b2eeaf725b0cd142595cea54da\\"",
-      "Type": "String",
-    },
-    "AssetParameters9fa7fb666d9c94e945481f85a7ae1e51856bd1b2eeaf725b0cd142595cea54daS3BucketD80EB8DD": Object {
-      "Description": "S3 bucket for asset \\"9fa7fb666d9c94e945481f85a7ae1e51856bd1b2eeaf725b0cd142595cea54da\\"",
-      "Type": "String",
-    },
-    "AssetParameters9fa7fb666d9c94e945481f85a7ae1e51856bd1b2eeaf725b0cd142595cea54daS3VersionKey0E90D117": Object {
-      "Description": "S3 key for asset version \\"9fa7fb666d9c94e945481f85a7ae1e51856bd1b2eeaf725b0cd142595cea54da\\"",
-      "Type": "String",
+    "BootstrapVersion": Object {
+      "Default": "/cdk-bootstrap/hnb659fds/version",
+      "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]",
+      "Type": "AWS::SSM::Parameter::Value<String>",
     },
   },
   "Resources": Object {
@@ -108,70 +171,6 @@ Object {
       },
       "Type": "AWS::IAM::Policy",
     },
-    "FunctionsExecuteStatementHandlerD6AF18F6": Object {
-      "DependsOn": Array [
-        "FunctionsDataApiRoleDefaultPolicyFB0D7CAF",
-        "FunctionsDataApiRole8AB01185",
-      ],
-      "Properties": Object {
-        "Code": Object {
-          "S3Bucket": Object {
-            "Ref": "AssetParameters7829186b09e2b0f4b5dde145df38fc3d9d09cad743fc97593b036f006e7fe9bcS3Bucket3DE17F88",
-          },
-          "S3Key": Object {
-            "Fn::Join": Array [
-              "",
-              Array [
-                Object {
-                  "Fn::Select": Array [
-                    0,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters7829186b09e2b0f4b5dde145df38fc3d9d09cad743fc97593b036f006e7fe9bcS3VersionKeyFAA0A05F",
-                        },
-                      ],
-                    },
-                  ],
-                },
-                Object {
-                  "Fn::Select": Array [
-                    1,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters7829186b09e2b0f4b5dde145df38fc3d9d09cad743fc97593b036f006e7fe9bcS3VersionKeyFAA0A05F",
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            ],
-          },
-        },
-        "Environment": Object {
-          "Variables": Object {
-            "CLUSTER_IDENTIFIER": Object {
-              "Ref": "RedShiftCluster84D121BA",
-            },
-            "DATABASE_NAME": "sample",
-            "USERNAME": "admin",
-          },
-        },
-        "Handler": "index.handler",
-        "Role": Object {
-          "Fn::GetAtt": Array [
-            "FunctionsDataApiRole8AB01185",
-            "Arn",
-          ],
-        },
-        "Runtime": "python3.7",
-      },
-      "Type": "AWS::Lambda::Function",
-    },
     "FunctionsGetStatementResultHandler75A14620": Object {
       "DependsOn": Array [
         "FunctionsDataApiRoleDefaultPolicyFB0D7CAF",
@@ -180,41 +179,9 @@ Object {
       "Properties": Object {
         "Code": Object {
           "S3Bucket": Object {
-            "Ref": "AssetParameters9fa7fb666d9c94e945481f85a7ae1e51856bd1b2eeaf725b0cd142595cea54daS3BucketD80EB8DD",
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": Object {
-            "Fn::Join": Array [
-              "",
-              Array [
-                Object {
-                  "Fn::Select": Array [
-                    0,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters9fa7fb666d9c94e945481f85a7ae1e51856bd1b2eeaf725b0cd142595cea54daS3VersionKey0E90D117",
-                        },
-                      ],
-                    },
-                  ],
-                },
-                Object {
-                  "Fn::Select": Array [
-                    1,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters9fa7fb666d9c94e945481f85a7ae1e51856bd1b2eeaf725b0cd142595cea54daS3VersionKey0E90D117",
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            ],
-          },
+          "S3Key": "313b872fd29af8f32c65d2c7bd91173c760a4271a4d0e30d14adb01eee7f2a16.zip",
         },
         "Environment": Object {
           "Variables": Object {
@@ -232,62 +199,7 @@ Object {
             "Arn",
           ],
         },
-        "Runtime": "python3.7",
-      },
-      "Type": "AWS::Lambda::Function",
-    },
-    "FunctionsPollingHandler44532339": Object {
-      "DependsOn": Array [
-        "FunctionsDataApiRoleDefaultPolicyFB0D7CAF",
-        "FunctionsDataApiRole8AB01185",
-      ],
-      "Properties": Object {
-        "Code": Object {
-          "S3Bucket": Object {
-            "Ref": "AssetParameters171bc9189ea1838894edd8c39f1a7d687a225f290cd03e4bc8517b3f7374c922S3BucketBC5B7A3B",
-          },
-          "S3Key": Object {
-            "Fn::Join": Array [
-              "",
-              Array [
-                Object {
-                  "Fn::Select": Array [
-                    0,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters171bc9189ea1838894edd8c39f1a7d687a225f290cd03e4bc8517b3f7374c922S3VersionKey215AC872",
-                        },
-                      ],
-                    },
-                  ],
-                },
-                Object {
-                  "Fn::Select": Array [
-                    1,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters171bc9189ea1838894edd8c39f1a7d687a225f290cd03e4bc8517b3f7374c922S3VersionKey215AC872",
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            ],
-          },
-        },
-        "Handler": "index.handler",
-        "Role": Object {
-          "Fn::GetAtt": Array [
-            "FunctionsDataApiRole8AB01185",
-            "Arn",
-          ],
-        },
-        "Runtime": "python3.7",
+        "Runtime": "python3.9",
       },
       "Type": "AWS::Lambda::Function",
     },
@@ -353,6 +265,7 @@ Object {
       "Type": "AWS::SecretsManager::SecretTargetAttachment",
     },
     "RedShiftClusterSecretC6A3C5AA": Object {
+      "DeletionPolicy": "Delete",
       "Properties": Object {
         "GenerateSecretString": Object {
           "ExcludeCharacters": "\\"@/\\\\ '",
@@ -362,6 +275,7 @@ Object {
         },
       },
       "Type": "AWS::SecretsManager::Secret",
+      "UpdateReplacePolicy": "Delete",
     },
     "RedShiftClusterSecurityGroup4A468D3C": Object {
       "Properties": Object {
@@ -791,29 +705,19 @@ Object {
           "Fn::Join": Array [
             "",
             Array [
-              "{\\"StartAt\\":\\"ExecuteStatement\\",\\"States\\":{\\"ExecuteStatement\\":{\\"Next\\":\\"StatementPolling\\",\\"Retry\\":[{\\"ErrorEquals\\":[\\"Lambda.ServiceException\\",\\"Lambda.AWSLambdaException\\",\\"Lambda.SdkClientException\\"],\\"IntervalSeconds\\":2,\\"MaxAttempts\\":6,\\"BackoffRate\\":2}],\\"Catch\\":[{\\"ErrorEquals\\":[\\"States.ALL\\"],\\"ResultPath\\":\\"$.Error\\",\\"Next\\":\\"NotifyError\\"}],\\"Type\\":\\"Task\\",\\"ResultPath\\":\\"$.ExecuteStatement\\",\\"Resource\\":\\"arn:",
+              "{\\"StartAt\\":\\"ExecuteStatement\\",\\"States\\":{\\"ExecuteStatement\\":{\\"Next\\":\\"StatementPolling\\",\\"Catch\\":[{\\"ErrorEquals\\":[\\"States.ALL\\"],\\"ResultPath\\":\\"$.Error\\",\\"Next\\":\\"NotifyError\\"}],\\"Type\\":\\"Task\\",\\"ResultPath\\":\\"$.ExecuteStatement\\",\\"Resource\\":\\"arn:",
               Object {
                 "Ref": "AWS::Partition",
               },
-              ":states:::lambda:invoke\\",\\"Parameters\\":{\\"FunctionName\\":\\"",
+              ":states:::aws-sdk:redshiftdata:executeStatement\\",\\"Parameters\\":{\\"ClusterIdentifier\\":\\"",
               Object {
-                "Fn::GetAtt": Array [
-                  "FunctionsExecuteStatementHandlerD6AF18F6",
-                  "Arn",
-                ],
+                "Ref": "RedShiftCluster84D121BA",
               },
-              "\\",\\"Payload.$\\":\\"$\\"}},\\"StatementPolling\\":{\\"Next\\":\\"StatementPollingJobComplete?\\",\\"Retry\\":[{\\"ErrorEquals\\":[\\"Lambda.ServiceException\\",\\"Lambda.AWSLambdaException\\",\\"Lambda.SdkClientException\\"],\\"IntervalSeconds\\":2,\\"MaxAttempts\\":6,\\"BackoffRate\\":2}],\\"Catch\\":[{\\"ErrorEquals\\":[\\"States.ALL\\"],\\"ResultPath\\":\\"$.Error\\",\\"Next\\":\\"NotifyError\\"}],\\"Type\\":\\"Task\\",\\"InputPath\\":\\"$.ExecuteStatement.Payload\\",\\"ResultPath\\":\\"$.PollResultStatementPolling\\",\\"Resource\\":\\"arn:",
+              "\\",\\"Database\\":\\"sample\\",\\"Sql\\":\\"select s.nspname as table_schema, s.oid as schema_id from pg_catalog.pg_namespace s\\",\\"DbUser\\":\\"admin\\"}},\\"StatementPolling\\":{\\"Next\\":\\"StatementPollingJobComplete?\\",\\"Catch\\":[{\\"ErrorEquals\\":[\\"States.ALL\\"],\\"ResultPath\\":\\"$.Error\\",\\"Next\\":\\"NotifyError\\"}],\\"Type\\":\\"Task\\",\\"ResultPath\\":\\"$.PollResultStatementPolling\\",\\"Resource\\":\\"arn:",
               Object {
                 "Ref": "AWS::Partition",
               },
-              ":states:::lambda:invoke\\",\\"Parameters\\":{\\"FunctionName\\":\\"",
-              Object {
-                "Fn::GetAtt": Array [
-                  "FunctionsPollingHandler44532339",
-                  "Arn",
-                ],
-              },
-              "\\",\\"Payload.$\\":\\"$\\"}},\\"StatementPollingWait\\":{\\"Type\\":\\"Wait\\",\\"Seconds\\":10,\\"Next\\":\\"StatementPolling\\"},\\"StatementPollingJobComplete?\\":{\\"Type\\":\\"Choice\\",\\"Choices\\":[{\\"Variable\\":\\"$.PollResultStatementPolling.Payload.Status\\",\\"StringEquals\\":\\"FINISHED\\",\\"Next\\":\\"GetStatementResult\\"},{\\"Or\\":[{\\"Variable\\":\\"$.PollResultStatementPolling.Payload.Status\\",\\"StringEquals\\":\\"STARTED\\"},{\\"Variable\\":\\"$.PollResultStatementPolling.Payload.Status\\",\\"StringEquals\\":\\"SUBMITTED\\"},{\\"Variable\\":\\"$.PollResultStatementPolling.Payload.Status\\",\\"StringEquals\\":\\"PICKED\\"}],\\"Next\\":\\"StatementPollingWait\\"}],\\"Default\\":\\"NotifyError\\"},\\"NotifyError\\":{\\"End\\":true,\\"Type\\":\\"Task\\",\\"ResultPath\\":\\"$.Notify\\",\\"Resource\\":\\"arn:",
+              ":states:::aws-sdk:redshiftdata:describeStatement\\",\\"Parameters\\":{\\"Id.$\\":\\"$.ExecuteStatement.Id\\"}},\\"StatementPollingWait\\":{\\"Type\\":\\"Wait\\",\\"Seconds\\":10,\\"Next\\":\\"StatementPolling\\"},\\"StatementPollingJobComplete?\\":{\\"Type\\":\\"Choice\\",\\"Choices\\":[{\\"Variable\\":\\"$.PollResultStatementPolling.Status\\",\\"StringEquals\\":\\"FINISHED\\",\\"Next\\":\\"GetStatementResult\\"},{\\"Or\\":[{\\"Variable\\":\\"$.PollResultStatementPolling.Status\\",\\"StringEquals\\":\\"STARTED\\"},{\\"Variable\\":\\"$.PollResultStatementPolling.Status\\",\\"StringEquals\\":\\"SUBMITTED\\"},{\\"Variable\\":\\"$.PollResultStatementPolling.Status\\",\\"StringEquals\\":\\"PICKED\\"}],\\"Next\\":\\"StatementPollingWait\\"}],\\"Default\\":\\"NotifyError\\"},\\"NotifyError\\":{\\"End\\":true,\\"Type\\":\\"Task\\",\\"ResultPath\\":\\"$.Notify\\",\\"Resource\\":\\"arn:",
               Object {
                 "Ref": "AWS::Partition",
               },
@@ -821,7 +725,7 @@ Object {
               Object {
                 "Ref": "TopicBFC7AF6E",
               },
-              "\\",\\"Message.$\\":\\"$\\",\\"Subject\\":\\"Executing a statement failed\\"}},\\"GetStatementResult\\":{\\"Next\\":\\"NotifySuccess\\",\\"Retry\\":[{\\"ErrorEquals\\":[\\"Lambda.ServiceException\\",\\"Lambda.AWSLambdaException\\",\\"Lambda.SdkClientException\\"],\\"IntervalSeconds\\":2,\\"MaxAttempts\\":6,\\"BackoffRate\\":2}],\\"Catch\\":[{\\"ErrorEquals\\":[\\"States.ALL\\"],\\"ResultPath\\":\\"$.Error\\",\\"Next\\":\\"NotifyError\\"}],\\"Type\\":\\"Task\\",\\"InputPath\\":\\"$.ExecuteStatement.Payload\\",\\"ResultPath\\":\\"$.GetStatementResult\\",\\"Resource\\":\\"arn:",
+              "\\",\\"Message.$\\":\\"$\\",\\"Subject\\":\\"Executing a statement failed\\"}},\\"GetStatementResult\\":{\\"Next\\":\\"NotifySuccess\\",\\"Retry\\":[{\\"ErrorEquals\\":[\\"Lambda.ServiceException\\",\\"Lambda.AWSLambdaException\\",\\"Lambda.SdkClientException\\"],\\"IntervalSeconds\\":2,\\"MaxAttempts\\":6,\\"BackoffRate\\":2}],\\"Catch\\":[{\\"ErrorEquals\\":[\\"States.ALL\\"],\\"ResultPath\\":\\"$.Error\\",\\"Next\\":\\"NotifyError\\"}],\\"Type\\":\\"Task\\",\\"InputPath\\":\\"$.ExecuteStatement\\",\\"ResultPath\\":\\"$.GetStatementResult\\",\\"Resource\\":\\"arn:",
               Object {
                 "Ref": "AWS::Partition",
               },
@@ -858,24 +762,36 @@ Object {
         "PolicyDocument": Object {
           "Statement": Array [
             Object {
-              "Action": "lambda:InvokeFunction",
+              "Action": "redshift-data:ExecuteStatement",
               "Effect": "Allow",
               "Resource": Object {
-                "Fn::GetAtt": Array [
-                  "FunctionsExecuteStatementHandlerD6AF18F6",
-                  "Arn",
+                "Fn::Join": Array [
+                  "",
+                  Array [
+                    "arn:",
+                    Object {
+                      "Ref": "AWS::Partition",
+                    },
+                    ":redshift:",
+                    Object {
+                      "Ref": "AWS::Region",
+                    },
+                    ":",
+                    Object {
+                      "Ref": "AWS::AccountId",
+                    },
+                    ":cluster:",
+                    Object {
+                      "Ref": "RedShiftCluster84D121BA",
+                    },
+                  ],
                 ],
               },
             },
             Object {
-              "Action": "lambda:InvokeFunction",
+              "Action": "redshift-data:DescribeStatement",
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::GetAtt": Array [
-                  "FunctionsPollingHandler44532339",
-                  "Arn",
-                ],
-              },
+              "Resource": "*",
             },
             Object {
               "Action": "sns:Publish",
@@ -887,12 +803,33 @@ Object {
             Object {
               "Action": "lambda:InvokeFunction",
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::GetAtt": Array [
-                  "FunctionsGetStatementResultHandler75A14620",
-                  "Arn",
-                ],
-              },
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "FunctionsGetStatementResultHandler75A14620",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "FunctionsGetStatementResultHandler75A14620",
+                          "Arn",
+                        ],
+                      },
+                      ":*",
+                    ],
+                  ],
+                },
+              ],
+            },
+            Object {
+              "Action": "redshift:GetClusterCredentials",
+              "Effect": "Allow",
+              "Resource": "*",
             },
           ],
           "Version": "2012-10-17",
@@ -915,15 +852,12 @@ Object {
               "Effect": "Allow",
               "Principal": Object {
                 "Service": Object {
-                  "Fn::Join": Array [
-                    "",
-                    Array [
-                      "states.",
-                      Object {
-                        "Ref": "AWS::Region",
-                      },
-                      ".amazonaws.com",
-                    ],
+                  "Fn::FindInMap": Array [
+                    "ServiceprincipalMap",
+                    Object {
+                      "Ref": "AWS::Region",
+                    },
+                    "states",
                   ],
                 },
               },
@@ -933,6 +867,33 @@ Object {
         },
       },
       "Type": "AWS::IAM::Role",
+    },
+  },
+  "Rules": Object {
+    "CheckBootstrapVersion": Object {
+      "Assertions": Array [
+        Object {
+          "Assert": Object {
+            "Fn::Not": Array [
+              Object {
+                "Fn::Contains": Array [
+                  Array [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                  ],
+                  Object {
+                    "Ref": "BootstrapVersion",
+                  },
+                ],
+              },
+            ],
+          },
+          "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.",
+        },
+      ],
     },
   },
 }
