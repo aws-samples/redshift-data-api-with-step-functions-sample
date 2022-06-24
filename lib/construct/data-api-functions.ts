@@ -1,7 +1,7 @@
-import * as cdk from "@aws-cdk/core";
-import * as lambdapy from "@aws-cdk/aws-lambda-python";
-import * as lambda from "@aws-cdk/aws-lambda";
-import * as iam from "@aws-cdk/aws-iam";
+import * as lambdapy from "@aws-cdk/aws-lambda-python-alpha";
+import * as lambda from "aws-cdk-lib/aws-lambda";
+import * as iam from "aws-cdk-lib/aws-iam";
+import { Construct } from "constructs";
 
 interface DataApiFunctionsProps {
     readonly redshiftClusterIdentifier: string;
@@ -9,12 +9,12 @@ interface DataApiFunctionsProps {
     readonly databaseUsername: string;
 }
 
-export class DataApiFunctions extends cdk.Construct {
+export class DataApiFunctions extends Construct {
     readonly executeStatementHandler: lambda.IFunction;
     readonly pollingHandler: lambda.IFunction;
     readonly getStatementResult: lambda.IFunction;
 
-    constructor(scope: cdk.Construct, id: string, props: DataApiFunctionsProps) {
+    constructor(scope: Construct, id: string, props: DataApiFunctionsProps) {
         super(scope, id);
 
         // We must use the same IAM Role for executing and describing a statements.
@@ -48,17 +48,20 @@ export class DataApiFunctions extends cdk.Construct {
         };
 
         this.executeStatementHandler = new lambdapy.PythonFunction(this, "ExecuteStatementHandler", {
+            runtime: lambda.Runtime.PYTHON_3_9,
             entry: "./lambda/execute_statement",
             role: lambdaRole,
             environment,
         });
 
         this.pollingHandler = new lambdapy.PythonFunction(this, "PollingHandler", {
+            runtime: lambda.Runtime.PYTHON_3_9,
             role: lambdaRole,
             entry: "./lambda/polling",
         });
 
         this.getStatementResult = new lambdapy.PythonFunction(this, "GetStatementResultHandler", {
+            runtime: lambda.Runtime.PYTHON_3_9,
             entry: "./lambda/get_statement_result",
             role: lambdaRole,
             environment,

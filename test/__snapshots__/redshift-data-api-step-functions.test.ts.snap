@@ -2,6 +2,100 @@
 
 exports[`Snapshot test 1`] = `
 Object {
+  "Mappings": Object {
+    "ServiceprincipalMap": Object {
+      "af-south-1": Object {
+        "states": "states.af-south-1.amazonaws.com",
+      },
+      "ap-east-1": Object {
+        "states": "states.ap-east-1.amazonaws.com",
+      },
+      "ap-northeast-1": Object {
+        "states": "states.ap-northeast-1.amazonaws.com",
+      },
+      "ap-northeast-2": Object {
+        "states": "states.ap-northeast-2.amazonaws.com",
+      },
+      "ap-northeast-3": Object {
+        "states": "states.ap-northeast-3.amazonaws.com",
+      },
+      "ap-south-1": Object {
+        "states": "states.ap-south-1.amazonaws.com",
+      },
+      "ap-southeast-1": Object {
+        "states": "states.ap-southeast-1.amazonaws.com",
+      },
+      "ap-southeast-2": Object {
+        "states": "states.ap-southeast-2.amazonaws.com",
+      },
+      "ap-southeast-3": Object {
+        "states": "states.ap-southeast-3.amazonaws.com",
+      },
+      "ca-central-1": Object {
+        "states": "states.ca-central-1.amazonaws.com",
+      },
+      "cn-north-1": Object {
+        "states": "states.cn-north-1.amazonaws.com",
+      },
+      "cn-northwest-1": Object {
+        "states": "states.cn-northwest-1.amazonaws.com",
+      },
+      "eu-central-1": Object {
+        "states": "states.eu-central-1.amazonaws.com",
+      },
+      "eu-north-1": Object {
+        "states": "states.eu-north-1.amazonaws.com",
+      },
+      "eu-south-1": Object {
+        "states": "states.eu-south-1.amazonaws.com",
+      },
+      "eu-south-2": Object {
+        "states": "states.eu-south-2.amazonaws.com",
+      },
+      "eu-west-1": Object {
+        "states": "states.eu-west-1.amazonaws.com",
+      },
+      "eu-west-2": Object {
+        "states": "states.eu-west-2.amazonaws.com",
+      },
+      "eu-west-3": Object {
+        "states": "states.eu-west-3.amazonaws.com",
+      },
+      "me-south-1": Object {
+        "states": "states.me-south-1.amazonaws.com",
+      },
+      "sa-east-1": Object {
+        "states": "states.sa-east-1.amazonaws.com",
+      },
+      "us-east-1": Object {
+        "states": "states.us-east-1.amazonaws.com",
+      },
+      "us-east-2": Object {
+        "states": "states.us-east-2.amazonaws.com",
+      },
+      "us-gov-east-1": Object {
+        "states": "states.us-gov-east-1.amazonaws.com",
+      },
+      "us-gov-west-1": Object {
+        "states": "states.us-gov-west-1.amazonaws.com",
+      },
+      "us-iso-east-1": Object {
+        "states": "states.amazonaws.com",
+      },
+      "us-iso-west-1": Object {
+        "states": "states.amazonaws.com",
+      },
+      "us-isob-east-1": Object {
+        "states": "states.amazonaws.com",
+      },
+      "us-west-1": Object {
+        "states": "states.us-west-1.amazonaws.com",
+      },
+      "us-west-2": Object {
+        "states": "states.us-west-2.amazonaws.com",
+      },
+    },
+  },
   "Outputs": Object {
     "StateMachineArn": Object {
       "Export": Object {
@@ -13,41 +107,10 @@ Object {
     },
   },
   "Parameters": Object {
-    "AssetParameters171bc9189ea1838894edd8c39f1a7d687a225f290cd03e4bc8517b3f7374c922ArtifactHashA2365B4D": Object {
-      "Description": "Artifact hash for asset \\"171bc9189ea1838894edd8c39f1a7d687a225f290cd03e4bc8517b3f7374c922\\"",
-      "Type": "String",
-    },
-    "AssetParameters171bc9189ea1838894edd8c39f1a7d687a225f290cd03e4bc8517b3f7374c922S3BucketBC5B7A3B": Object {
-      "Description": "S3 bucket for asset \\"171bc9189ea1838894edd8c39f1a7d687a225f290cd03e4bc8517b3f7374c922\\"",
-      "Type": "String",
-    },
-    "AssetParameters171bc9189ea1838894edd8c39f1a7d687a225f290cd03e4bc8517b3f7374c922S3VersionKey215AC872": Object {
-      "Description": "S3 key for asset version \\"171bc9189ea1838894edd8c39f1a7d687a225f290cd03e4bc8517b3f7374c922\\"",
-      "Type": "String",
-    },
-    "AssetParameters7829186b09e2b0f4b5dde145df38fc3d9d09cad743fc97593b036f006e7fe9bcArtifactHash886B26AC": Object {
-      "Description": "Artifact hash for asset \\"7829186b09e2b0f4b5dde145df38fc3d9d09cad743fc97593b036f006e7fe9bc\\"",
-      "Type": "String",
-    },
-    "AssetParameters7829186b09e2b0f4b5dde145df38fc3d9d09cad743fc97593b036f006e7fe9bcS3Bucket3DE17F88": Object {
-      "Description": "S3 bucket for asset \\"7829186b09e2b0f4b5dde145df38fc3d9d09cad743fc97593b036f006e7fe9bc\\"",
-      "Type": "String",
-    },
-    "AssetParameters7829186b09e2b0f4b5dde145df38fc3d9d09cad743fc97593b036f006e7fe9bcS3VersionKeyFAA0A05F": Object {
-      "Description": "S3 key for asset version \\"7829186b09e2b0f4b5dde145df38fc3d9d09cad743fc97593b036f006e7fe9bc\\"",
-      "Type": "String",
-    },
-    "AssetParameters9fa7fb666d9c94e945481f85a7ae1e51856bd1b2eeaf725b0cd142595cea54daArtifactHashDF9B9634": Object {
-      "Description": "Artifact hash for asset \\"9fa7fb666d9c94e945481f85a7ae1e51856bd1b2eeaf725b0cd142595cea54da\\"",
-      "Type": "String",
-    },
-    "AssetParameters9fa7fb666d9c94e945481f85a7ae1e51856bd1b2eeaf725b0cd142595cea54daS3BucketD80EB8DD": Object {
-      "Description": "S3 bucket for asset \\"9fa7fb666d9c94e945481f85a7ae1e51856bd1b2eeaf725b0cd142595cea54da\\"",
-      "Type": "String",
-    },
-    "AssetParameters9fa7fb666d9c94e945481f85a7ae1e51856bd1b2eeaf725b0cd142595cea54daS3VersionKey0E90D117": Object {
-      "Description": "S3 key for asset version \\"9fa7fb666d9c94e945481f85a7ae1e51856bd1b2eeaf725b0cd142595cea54da\\"",
-      "Type": "String",
+    "BootstrapVersion": Object {
+      "Default": "/cdk-bootstrap/hnb659fds/version",
+      "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]",
+      "Type": "AWS::SSM::Parameter::Value<String>",
     },
   },
   "Resources": Object {
@@ -116,41 +179,9 @@ Object {
       "Properties": Object {
         "Code": Object {
           "S3Bucket": Object {
-            "Ref": "AssetParameters7829186b09e2b0f4b5dde145df38fc3d9d09cad743fc97593b036f006e7fe9bcS3Bucket3DE17F88",
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": Object {
-            "Fn::Join": Array [
-              "",
-              Array [
-                Object {
-                  "Fn::Select": Array [
-                    0,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters7829186b09e2b0f4b5dde145df38fc3d9d09cad743fc97593b036f006e7fe9bcS3VersionKeyFAA0A05F",
-                        },
-                      ],
-                    },
-                  ],
-                },
-                Object {
-                  "Fn::Select": Array [
-                    1,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters7829186b09e2b0f4b5dde145df38fc3d9d09cad743fc97593b036f006e7fe9bcS3VersionKeyFAA0A05F",
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            ],
-          },
+          "S3Key": "1d757c93b638e4e354f851b75ba50e205c59b02490306cfa8ba3bbbbe03f8a59.zip",
         },
         "Environment": Object {
           "Variables": Object {
@@ -168,7 +199,7 @@ Object {
             "Arn",
           ],
         },
-        "Runtime": "python3.7",
+        "Runtime": "python3.9",
       },
       "Type": "AWS::Lambda::Function",
     },
@@ -180,41 +211,9 @@ Object {
       "Properties": Object {
         "Code": Object {
           "S3Bucket": Object {
-            "Ref": "AssetParameters9fa7fb666d9c94e945481f85a7ae1e51856bd1b2eeaf725b0cd142595cea54daS3BucketD80EB8DD",
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": Object {
-            "Fn::Join": Array [
-              "",
-              Array [
-                Object {
-                  "Fn::Select": Array [
-                    0,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters9fa7fb666d9c94e945481f85a7ae1e51856bd1b2eeaf725b0cd142595cea54daS3VersionKey0E90D117",
-                        },
-                      ],
-                    },
-                  ],
-                },
-                Object {
-                  "Fn::Select": Array [
-                    1,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters9fa7fb666d9c94e945481f85a7ae1e51856bd1b2eeaf725b0cd142595cea54daS3VersionKey0E90D117",
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            ],
-          },
+          "S3Key": "228b31903cfa123fcb1eb732bb9c0fcd2b74c4718bb9f6182d95a0c76c6cc75f.zip",
         },
         "Environment": Object {
           "Variables": Object {
@@ -232,7 +231,7 @@ Object {
             "Arn",
           ],
         },
-        "Runtime": "python3.7",
+        "Runtime": "python3.9",
       },
       "Type": "AWS::Lambda::Function",
     },
@@ -244,41 +243,9 @@ Object {
       "Properties": Object {
         "Code": Object {
           "S3Bucket": Object {
-            "Ref": "AssetParameters171bc9189ea1838894edd8c39f1a7d687a225f290cd03e4bc8517b3f7374c922S3BucketBC5B7A3B",
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": Object {
-            "Fn::Join": Array [
-              "",
-              Array [
-                Object {
-                  "Fn::Select": Array [
-                    0,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters171bc9189ea1838894edd8c39f1a7d687a225f290cd03e4bc8517b3f7374c922S3VersionKey215AC872",
-                        },
-                      ],
-                    },
-                  ],
-                },
-                Object {
-                  "Fn::Select": Array [
-                    1,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParameters171bc9189ea1838894edd8c39f1a7d687a225f290cd03e4bc8517b3f7374c922S3VersionKey215AC872",
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            ],
-          },
+          "S3Key": "f738d05077c9b9528bf4c8f30bd2df43eeaabfd0c41ea1e2d831bb555cdf18b0.zip",
         },
         "Handler": "index.handler",
         "Role": Object {
@@ -287,7 +254,7 @@ Object {
             "Arn",
           ],
         },
-        "Runtime": "python3.7",
+        "Runtime": "python3.9",
       },
       "Type": "AWS::Lambda::Function",
     },
@@ -353,6 +320,7 @@ Object {
       "Type": "AWS::SecretsManager::SecretTargetAttachment",
     },
     "RedShiftClusterSecretC6A3C5AA": Object {
+      "DeletionPolicy": "Delete",
       "Properties": Object {
         "GenerateSecretString": Object {
           "ExcludeCharacters": "\\"@/\\\\ '",
@@ -362,6 +330,7 @@ Object {
         },
       },
       "Type": "AWS::SecretsManager::Secret",
+      "UpdateReplacePolicy": "Delete",
     },
     "RedShiftClusterSecurityGroup4A468D3C": Object {
       "Properties": Object {
@@ -860,22 +829,54 @@ Object {
             Object {
               "Action": "lambda:InvokeFunction",
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::GetAtt": Array [
-                  "FunctionsExecuteStatementHandlerD6AF18F6",
-                  "Arn",
-                ],
-              },
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "FunctionsExecuteStatementHandlerD6AF18F6",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "FunctionsExecuteStatementHandlerD6AF18F6",
+                          "Arn",
+                        ],
+                      },
+                      ":*",
+                    ],
+                  ],
+                },
+              ],
             },
             Object {
               "Action": "lambda:InvokeFunction",
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::GetAtt": Array [
-                  "FunctionsPollingHandler44532339",
-                  "Arn",
-                ],
-              },
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "FunctionsPollingHandler44532339",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "FunctionsPollingHandler44532339",
+                          "Arn",
+                        ],
+                      },
+                      ":*",
+                    ],
+                  ],
+                },
+              ],
             },
             Object {
               "Action": "sns:Publish",
@@ -887,12 +888,28 @@ Object {
             Object {
               "Action": "lambda:InvokeFunction",
               "Effect": "Allow",
-              "Resource": Object {
-                "Fn::GetAtt": Array [
-                  "FunctionsGetStatementResultHandler75A14620",
-                  "Arn",
-                ],
-              },
+              "Resource": Array [
+                Object {
+                  "Fn::GetAtt": Array [
+                    "FunctionsGetStatementResultHandler75A14620",
+                    "Arn",
+                  ],
+                },
+                Object {
+                  "Fn::Join": Array [
+                    "",
+                    Array [
+                      Object {
+                        "Fn::GetAtt": Array [
+                          "FunctionsGetStatementResultHandler75A14620",
+                          "Arn",
+                        ],
+                      },
+                      ":*",
+                    ],
+                  ],
+                },
+              ],
             },
           ],
           "Version": "2012-10-17",
@@ -915,15 +932,12 @@ Object {
               "Effect": "Allow",
               "Principal": Object {
                 "Service": Object {
-                  "Fn::Join": Array [
-                    "",
-                    Array [
-                      "states.",
-                      Object {
-                        "Ref": "AWS::Region",
-                      },
-                      ".amazonaws.com",
-                    ],
+                  "Fn::FindInMap": Array [
+                    "ServiceprincipalMap",
+                    Object {
+                      "Ref": "AWS::Region",
+                    },
+                    "states",
                   ],
                 },
               },
@@ -933,6 +947,33 @@ Object {
         },
       },
       "Type": "AWS::IAM::Role",
+    },
+  },
+  "Rules": Object {
+    "CheckBootstrapVersion": Object {
+      "Assertions": Array [
+        Object {
+          "Assert": Object {
+            "Fn::Not": Array [
+              Object {
+                "Fn::Contains": Array [
+                  Array [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                  ],
+                  Object {
+                    "Ref": "BootstrapVersion",
+                  },
+                ],
+              },
+            ],
+          },
+          "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.",
+        },
+      ],
     },
   },
 }

@@ -1,8 +1,9 @@
-import * as cdk from "@aws-cdk/core";
-import * as sns from "@aws-cdk/aws-sns";
-import * as sfn from "@aws-cdk/aws-stepfunctions";
-import * as sfnt from "@aws-cdk/aws-stepfunctions-tasks";
+import * as cdk from "aws-cdk-lib";
+import * as sns from "aws-cdk-lib/aws-sns";
+import * as sfn from "aws-cdk-lib/aws-stepfunctions";
+import * as sfnt from "aws-cdk-lib/aws-stepfunctions-tasks";
 import { DataApiFunctions } from "./data-api-functions";
+import { Construct } from "constructs";
 
 interface DataApiFlowProps {
     readonly functions: DataApiFunctions;
@@ -10,10 +11,10 @@ interface DataApiFlowProps {
     readonly successNotifyTopic: sns.ITopic;
 }
 
-export class DataApiFlow extends cdk.Construct {
+export class DataApiFlow extends Construct {
     readonly flowStateMachine: sfn.StateMachine;
 
-    constructor(scope: cdk.Construct, id: string, props: DataApiFlowProps) {
+    constructor(scope: Construct, id: string, props: DataApiFlowProps) {
         super(scope, id);
 
         const functions = props.functions;
