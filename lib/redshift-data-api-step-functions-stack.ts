@@ -1,14 +1,13 @@
-import * as cdk from "@aws-cdk/core";
-import * as ec2 from "@aws-cdk/aws-ec2";
-import * as redshift from "@aws-cdk/aws-redshift";
-import * as sns from "@aws-cdk/aws-sns";
+import * as cdk from "aws-cdk-lib";
+import * as ec2 from "aws-cdk-lib/aws-ec2";
+import * as redshift from "@aws-cdk/aws-redshift-alpha";
+import * as sns from "aws-cdk-lib/aws-sns";
 import { DataApiFlow } from "./construct/data-api-flow";
 import { DataApiFunctions } from "./construct/data-api-functions";
-import { SnsPublish } from "@aws-cdk/aws-stepfunctions-tasks";
-import { Stack } from "@aws-cdk/core";
+import { Construct } from "constructs";
 
 export class RedshiftDataApiStepFunctionsStack extends cdk.Stack {
-    constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+    constructor(scope: Construct, id: string, props?: cdk.StackProps) {
         super(scope, id, props);
 
         const vpc = new ec2.Vpc(this, `Vpc`);
