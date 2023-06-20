@@ -22,6 +22,9 @@ Object {
       "ap-south-1": Object {
         "states": "states.ap-south-1.amazonaws.com",
       },
+      "ap-south-2": Object {
+        "states": "states.ap-south-2.amazonaws.com",
+      },
       "ap-southeast-1": Object {
         "states": "states.ap-southeast-1.amazonaws.com",
       },
@@ -43,6 +46,9 @@ Object {
       "eu-central-1": Object {
         "states": "states.eu-central-1.amazonaws.com",
       },
+      "eu-central-2": Object {
+        "states": "states.eu-central-2.amazonaws.com",
+      },
       "eu-north-1": Object {
         "states": "states.eu-north-1.amazonaws.com",
       },
@@ -60,6 +66,9 @@ Object {
       },
       "eu-west-3": Object {
         "states": "states.eu-west-3.amazonaws.com",
+      },
+      "me-central-1": Object {
+        "states": "states.me-central-1.amazonaws.com",
       },
       "me-south-1": Object {
         "states": "states.me-south-1.amazonaws.com",
@@ -759,6 +768,7 @@ Object {
       "Type": "AWS::EC2::VPCGatewayAttachment",
     },
     "WorkflowFlowStateMachine4B9E844C": Object {
+      "DeletionPolicy": "Delete",
       "DependsOn": Array [
         "WorkflowFlowStateMachineRoleDefaultPolicy9A52CE93",
         "WorkflowFlowStateMachineRoleECDCC765",
@@ -829,6 +839,7 @@ Object {
         },
       },
       "Type": "AWS::StepFunctions::StateMachine",
+      "UpdateReplacePolicy": "Delete",
     },
     "WorkflowFlowStateMachineRoleDefaultPolicy9A52CE93": Object {
       "Properties": Object {
