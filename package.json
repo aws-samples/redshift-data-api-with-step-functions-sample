@@ -1,5 +1,5 @@
 {
-  "name": "redshift-data-api-step-functions",
+  "name": "@aws-samples/redshift-data-api-step-functions",
   "version": "0.1.0",
   "private": true,
   "bin": {
